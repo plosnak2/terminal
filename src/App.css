@@ -11,7 +11,7 @@ body {
 }
 
 .terminal {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .panel {
@@ -64,10 +64,19 @@ body {
 
 @media screen and (max-width: 1200px){
   .panel{
-    width: 80vw
+    width: 90vw;
+    margin-right: 0;
   }
 
   .terminal-body {
-    width: 80vw;
+    width: 90vw;
+    margin-right: 0;
   }
+}
+
+@media screen and (max-width: 500px){
+  .terminal {
+    margin-top: 150px;
+  }
+  
 }

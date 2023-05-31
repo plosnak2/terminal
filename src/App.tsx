@@ -2,6 +2,7 @@ import './App.css'
 import { Terminal } from './components/Terminal';
 import { useRef, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
+import { ThemePicker } from './components/ThemePicker';
 
 function App() {
   // ref for focusing input
@@ -21,6 +22,7 @@ function App() {
         position="top-center"
         reverseOrder={false}
       />
+      <ThemePicker />
       <div className={`terminal + ${closed ? 'hidden-terminal' : ''}`} onClick={handleClick}>
         <div className='panel'>
           <div className='circle' onClick={() => {setClosed(true)}}></div>
