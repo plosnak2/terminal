@@ -40,3 +40,8 @@ input:focus {
 .command {
     color:white
 }
+
+a:link, a:visited {
+    text-decoration: none;
+    color: rgb(243, 15, 243);
+  }

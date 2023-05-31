@@ -33,8 +33,8 @@ export function Terminal ( {refInput} : ITerminal ) {
             let found = false
             myCommands.map(command => {
                 if(command.name === input){
-                    let elem1 = <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span> <span className="command">{input}</span></p>
-                    let elem2 = <p><span className="command">{command.value}</span></p>
+                    let elem1 = <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span> <span className="command" >{input}</span></p>
+                    let elem2 = <p><span className="command" dangerouslySetInnerHTML={{__html: command.value}}></span></p>
                     setCommands((oldCommands : String[]) => [...oldCommands, elem1, elem2])
                     setInput("")
                     found = true

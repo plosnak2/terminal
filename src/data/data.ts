@@ -5,11 +5,11 @@ export const myCommands = [
     },
     {
         "name": "whoami",
-        "value": "This is whoami"
+        "value": "I am Jakub Zaukolec - student VUT FIT"
     },
     {
         "name": "contact",
-        "value": "This is contact"
+        "value": "Email adress: <a href='mailto:jakub.zaukolec@gmail.com'>jakub.zaukolec@gmail.com</a>"
     },
     {
         "name": "clear",
@@ -17,11 +17,11 @@ export const myCommands = [
     },
     {
         "name": "linkedin",
-        "value": "This is linkedin"
+        "value": "LinkedIn: <a href='https://www.linkedin.com/in/jakub-zaukolec-8a36901b7/' target='_blank'>https://www.linkedin.com/in/jakub-zaukolec-8a36901b7/</a> "
     },
     {
         "name": "github",
-        "value": "This is github"
+        "value": "Github: <a href='https://github.com/plosnak2' target='_blank'>https://github.com/plosnak2</a> "
     },
     {
         "name": "",
