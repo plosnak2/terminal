@@ -61,3 +61,13 @@ body {
   height:0;
   transition: all 1s ease;
 }
+
+@media screen and (max-width: 1200px){
+  .panel{
+    width: 80vw
+  }
+
+  .terminal-body {
+    width: 80vw;
+  }
+}
