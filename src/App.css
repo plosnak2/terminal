@@ -53,4 +53,11 @@ body {
   height: 50vh;
   border-radius: 0 0 10px 10px ;
   padding-bottom: 5px;
+  transition: all 1s ease;
+}
+
+.hidden-terminal {
+  opacity:0;
+  height:0;
+  transition: all 1s ease;
 }

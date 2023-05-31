@@ -1,10 +1,12 @@
 import './App.css'
 import { Terminal } from './components/Terminal';
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 function App() {
   // ref for focusing input
   const refInput = useRef<HTMLInputElement>(null);
+  const [closed, setClosed] = useState<boolean>(false)
+  const [minimalized, setMinimalized] = useState<boolean>(false)
 
   function handleClick() {
     if (refInput.current !== null) {
@@ -14,13 +16,13 @@ function App() {
 
   return (
     <div>
-      <div className='terminal' onClick={handleClick}>
+      <div className={`terminal + ${closed ? 'hidden-terminal' : ''}`} onClick={handleClick}>
         <div className='panel'>
-          <div className='circle'></div>
-          <div className='circle'></div>
+          <div className='circle' onClick={() => {setClosed(true)}}></div>
+          <div className='circle' onClick={() => {setMinimalized(!minimalized)}}></div>
           <div className='circle'></div>
         </div>
-        <div className='terminal-body'>
+        <div className={`terminal-body + ${minimalized ? 'hidden-terminal' : ''}`}>
           <Terminal refInput={refInput}/>
         </div>
       </div>      
