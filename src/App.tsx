@@ -6,10 +6,12 @@ function App() {
     <div>
       <div className='terminal'>
         <div className='panel'>
-
+          <div className='circle'></div>
+          <div className='circle'></div>
+          <div className='circle'></div>
         </div>
         <div className='terminal-body'>
-
+          
         </div>
       </div>      
     </div>

@@ -19,6 +19,32 @@ body {
   height: 20px;
   background-color: white;
   border-radius: 10px 10px 0px 0px ;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.circle {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 100%;
+}
+
+.circle:first-child{
+  margin-left: 10px;
+  background-color: red;
+}
+
+.circle:nth-child(2){
+  background-color: orange;
+}
+
+.circle:nth-child(3){
+  background-color: green;
+}
+
+.circle:active {
+  opacity: 50%;
 }
 
 .terminal-body {
