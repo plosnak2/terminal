@@ -1,4 +1,4 @@
-import { KeyboardEvent , SyntheticEvent, useState } from 'react'
+import { KeyboardEvent , SyntheticEvent, useState, useRef, useEffect } from 'react'
 import './Terminal.css'
 import { myCommands } from '../data/data'
 import React from 'react';
@@ -6,6 +6,15 @@ import React from 'react';
 export function Terminal () {
     const [input, setInput] = useState<String>("")
     const [commands, setCommands] = useState<any>([])
+    const terminalRef = useRef<null | HTMLDivElement>(null)
+
+    const scrollToBottom = () => {
+        terminalRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+
+    useEffect(() => {
+        scrollToBottom()
+    }, [commands]);
 
     function handlePress (event : KeyboardEvent <HTMLInputElement>): void {
         if (event.key === 'Enter'){
@@ -47,6 +56,7 @@ export function Terminal () {
             <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span></p>
             <input className='input' type="text" value={input as string} onChange={(e) => setInput(e.target.value)}
             tabIndex={0} onKeyDown={handlePress}/>
+            <div ref={terminalRef}/>
         </div>
     )
 }
