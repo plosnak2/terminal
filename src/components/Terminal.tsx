@@ -1,13 +1,19 @@
-import { KeyboardEvent , SyntheticEvent, useState, useRef, useEffect } from 'react'
+import { KeyboardEvent , useState, useRef, useEffect, RefObject } from 'react'
 import './Terminal.css'
 import { myCommands } from '../data/data'
 import React from 'react';
 
-export function Terminal () {
+// type for Terminal props
+type ITerminal = {
+    refInput: RefObject<HTMLInputElement>
+}
+
+export function Terminal ( {refInput} : ITerminal ) {
     const [input, setInput] = useState<String>("")
     const [commands, setCommands] = useState<any>([])
     const terminalRef = useRef<null | HTMLDivElement>(null)
 
+    // ref to scroll terminal to the bottom
     const scrollToBottom = () => {
         terminalRef.current?.scrollIntoView({ behavior: "smooth" })
     }
@@ -16,6 +22,7 @@ export function Terminal () {
         scrollToBottom()
     }, [commands]);
 
+    // function that handles command logic
     function handlePress (event : KeyboardEvent <HTMLInputElement>): void {
         if (event.key === 'Enter'){
             if(input === "clear"){
@@ -55,7 +62,7 @@ export function Terminal () {
             }
             <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span></p>
             <input className='input' type="text" value={input as string} onChange={(e) => setInput(e.target.value)}
-            tabIndex={0} onKeyDown={handlePress}/>
+            tabIndex={0} onKeyDown={handlePress} ref={refInput}/>
             <div ref={terminalRef}/>
         </div>
     )
