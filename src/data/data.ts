@@ -1,10 +1,10 @@
 export const myCommands = [
     {
         "name": "help",
-        "value": "This is Help"
+        "value": "available commands:\nwhoami - info about me\ncontact - contact info\nclear - clears terminal\nlinkedin - link\ngithub - link"
     },
     {
-        "whoami": "help",
+        "name": "whoami",
         "value": "This is whoami"
     },
     {
@@ -26,5 +26,5 @@ export const myCommands = [
     {
         "name": "",
         "value": ""
-    },
+    }
 ]
