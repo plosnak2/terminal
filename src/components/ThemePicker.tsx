@@ -1,21 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './ThemePicker.css'
+import Cookies from 'js-cookie';
 
 export function ThemePicker () {
-    const [theme, setTheme] = useState("first")
+    const [theme, setTheme] = useState<string>(Cookies.get('theme') === undefined ? "first" : Cookies.get('theme') as string)
+
+    // selecting theme from cookie on first render
+    useEffect(() => {
+        if(Cookies.get('theme') === "first") {
+            document.body.style.backgroundColor = "#815BA4"
+        }
+
+        if(Cookies.get('theme') === "second") {
+            document.body.style.backgroundColor = "grey"
+        }
+
+        if(Cookies.get('theme') === "third") {
+            document.body.style.backgroundColor = "rgb(135, 239, 255)"
+        }
+    }, [])
 
     function onValueChange(event : string) {
         setTheme(event)
 
         if(event === "first") {
+            Cookies.set('theme', 'first');
             document.body.style.backgroundColor = "#815BA4"
         }
 
         if(event === "second") {
+            Cookies.set('theme', 'second');
             document.body.style.backgroundColor = "grey"
         }
 
         if(event === "third") {
+            Cookies.set('theme', 'third');
             document.body.style.backgroundColor = "rgb(135, 239, 255)"
         }
     }
