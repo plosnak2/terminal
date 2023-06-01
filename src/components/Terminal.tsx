@@ -60,9 +60,11 @@ export function Terminal ( {refInput} : ITerminal ) {
                     { component }
                 </React.Fragment>))
             }
-            <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span></p>
-            <input className='input' type="text" value={input as string} onChange={(e) => setInput(e.target.value)}
-            tabIndex={0} onKeyDown={handlePress} ref={refInput}/>
+            <div className='last-command'>
+                <p><span className='root-user'>root@user</span><span className='path'>/dev/null$</span></p>
+                <input className='input' type="text" value={input as string} onChange={(e) => setInput(e.target.value)}
+                tabIndex={0} onKeyDown={handlePress} ref={refInput}/>
+            </div>
             <div ref={terminalRef}/>
         </div>
     )

@@ -31,6 +31,7 @@ input {
     font-family: 'Roboto Mono', monospace;
     font-size: 1em;
     overflow: visible;
+    margin-left: 10px;
 }
 
 input:focus {
@@ -44,4 +45,8 @@ input:focus {
 a:link, a:visited {
     text-decoration: none;
     color: rgb(243, 15, 243);
-  }
+}
+
+.last-command {
+    display: flex;
+}
